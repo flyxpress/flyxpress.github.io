@@ -1,0 +1,13 @@
+# Archivos y directorios generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración sensibles
+conexion.php
+flyxpress.sql
+
+# Cualquier otra cosa que AppServ o tu IDE pueda generar y no quieras versionar
+# (ejemplos, puedes borrar si no los ves en tus carpetas)
+*.log
+*.bak
+/temp/

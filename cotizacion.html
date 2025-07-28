@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLY XPRESS</title>
+  <link rel="icon" href="Logo.png" type="image/png" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="estilocotización.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  
+</head>
+<body>
+  <div id="loader">
+  <video src="animacion.mp4" autoplay muted loop></video>
+</div>
+
+<div id="contenido" style="display: none;">
+  <!-- Aquí va todo tu contenido principal -->
+</div>
+<!-- header -->
+<header>
+  <div class="logo">      &nbsp;
+Fly Xpress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+¡Tu envío seguro!</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+   
+<button type="button" class="botonabrir">
+<div class="iconomenu" id="openMenu" onclick="toggleMenu()">☰</div></button><br><br>
+
+
+<nav class="nav-links" id="navLinks"><br><br><button type="button" class="botoncerrar">
+    <div class="cerrar" onclick="toggleMenu()">✖</div></button><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <img src="Logo.png" id="logo2">
+  <a href="Prueba encabezado.html"><button type="button" class="primary"><i class="bi bi-shop"></i> Inicio</button></a><br><br>
+  <a href="cotizacion.html"><button type="button" class="primary"><i class="bi bi-box-seam"></i> Cotización en línea</button></a><br><br>
+  <a href="cobertura.html"><button type="button" class="primary"><i class="bi bi-geo-alt"></i>
+Encontrar sucursales</button></a><br><br><br><br><br>
+  <div id="contacto">Atención al cliente</div>
+  <div id="num">3321-8446</div><br><br><br>
+</nav>
+</header>
+<br><br>
+
+<div class="logo1"><img src="Logo - copia.png"></div>
+
+
+<div class="paquete">
+<div class="main-container">
+        <h1>Información de envío</h1>
+
+        <div class="form-section">
+            <p class="question-text">¿Desde que sucursal se enviará su paquete?</p>
+            <label for="origen_poblado" class="label-text">Poblado, municipio y departamento:</label>
+            <div class="select-wrapper">
+                <select id="origen_poblado" name="origen_poblado" required>
+                    <option value="" disabled selected>Seleccionar</option>
+                     <option value="Zona 1 – Centro Histórico">Zona 1 – Centro Histórico</option>
+                    <option value="Zona 4 – Cuatro Grados Norte / Distrito tecnológico">Zona 4 – Cuatro Grados Norte / Distrito tecnológico</option>
+                    <option value="Zona 9 – Cerca de embajadas y oficinas">Zona 9 – Cerca de embajadas y oficinas</option>
+                    <option value="Zona 10 – Zona financiera y comercial">Zona 10 – Zona financiera y comercial</option>
+                    <option value="Zona 11 – Calzada Roosevelt">Zona 11 – Calzada Roosevelt</option>
+                    <option value="Zona 12 – Ciudad Universitaria / Atanasio Tzul">Zona 12 – Ciudad Universitaria / Atanasio Tzul</option>
+                    <option value="Zona 13 – Aeropuerto La Aurora">Zona 13 – Aeropuerto La Aurora</option>
+                    <option value="Zona 14 – Zona hotelera y oficinas">Zona 14 – Zona hotelera y oficinas</option>
+                    <option value="Zona 15 – Vista Hermosa">Zona 15 – Vista Hermosa</option>
+                    <option value="Zona 16 – Cayalá y sectores residenciales">Zona 16 – Cayalá y sectores residenciales</option>
+                    <option value="Zona 6 – San Juan de Dios / Barrio San Antonio">Zona 6 – San Juan de Dios / Barrio San Antonio</option>
+                    <option value="Zona 7 – El Granero / Kaminal Juyú">Zona 7 – El Granero / Kaminal Juyú</option>
+                    <option value="Zona 18 – Atlántida / Colonia San Rafael">Zona 18 – Atlántida / Colonia San Rafael</option>
+                    <option value="Zona 21 – Nimajuyú / Mezquital">Zona 21 – Nimajuyú / Mezquital</option>
+                    <option value="Mixco – Lo de Fuentes">Mixco – Lo de Fuentes</option>
+                    <option value="Mixco – San Cristóbal">Mixco – San Cristóbal</option>
+                    <option value="Mixco – El Milagro">Mixco – El Milagro</option>
+                    <option value="Villa Nueva – Bárcenas">Villa Nueva – Bárcenas</option>
+                    <option value="Villa Nueva – El Frutal">Villa Nueva – El Frutal</option>
+                    <option value="Villa Nueva – Ciudad Real">Villa Nueva – Ciudad Real</option>
+                    <option value="San Miguel Petapa – Colinas de Petapa">San Miguel Petapa – Colinas de Petapa</option>
+                    <option value="Santa Catarina Pinula – zona de Condado Concepción">Santa Catarina Pinula – zona de Condado Concepción</option>
+                    <option value="Villa Canales – Boca del Monte">Villa Canales – Boca del Monte</option>
+                    <option value="Amatitlán – Entrada principal y comercio">Amatitlán – Entrada principal y comercio</option>
+                    </select>
+                <i class="fas fa-chevron-down select-arrow"></i>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <p class="question-text">¿A que sucursal se enviará su paquete?</p>
+            <label for="destino_poblado" class="label-text">Poblado, municipio y departamento:</label>
+            <div class="select-wrapper">
+                <select id="destino_poblado" name="destino_poblado" required>
+                    <option value="" disabled selected>Seleccionar</option>
+                    <option value="Zona 1 – Centro Histórico">Zona 1 – Centro Histórico</option>
+                    <option value="Zona 4 – Cuatro Grados Norte / Distrito tecnológico">Zona 4 – Cuatro Grados Norte / Distrito tecnológico</option>
+                    <option value="Zona 9 – Cerca de embajadas y oficinas">Zona 9 – Cerca de embajadas y oficinas</option>
+                    <option value="Zona 10 – Zona financiera y comercial">Zona 10 – Zona financiera y comercial</option>
+                    <option value="Zona 11 – Calzada Roosevelt">Zona 11 – Calzada Roosevelt</option>
+                    <option value="Zona 12 – Ciudad Universitaria / Atanasio Tzul">Zona 12 – Ciudad Universitaria / Atanasio Tzul</option>
+                    <option value="Zona 13 – Aeropuerto La Aurora">Zona 13 – Aeropuerto La Aurora</option>
+                    <option value="Zona 14 – Zona hotelera y oficinas">Zona 14 – Zona hotelera y oficinas</option>
+                    <option value="Zona 15 – Vista Hermosa">Zona 15 – Vista Hermosa</option>
+                    <option value="Zona 16 – Cayalá y sectores residenciales">Zona 16 – Cayalá y sectores residenciales</option>
+                    <option value="Zona 6 – San Juan de Dios / Barrio San Antonio">Zona 6 – San Juan de Dios / Barrio San Antonio</option>
+                    <option value="Zona 7 – El Granero / Kaminal Juyú">Zona 7 – El Granero / Kaminal Juyú</option>
+                    <option value="Zona 18 – Atlántida / Colonia San Rafael">Zona 18 – Atlántida / Colonia San Rafael</option>
+                    <option value="Zona 21 – Nimajuyú / Mezquital">Zona 21 – Nimajuyú / Mezquital</option>
+                    <option value="Mixco – Lo de Fuentes">Mixco – Lo de Fuentes</option>
+                    <option value="Mixco – San Cristóbal">Mixco – San Cristóbal</option>
+                    <option value="Mixco – El Milagro">Mixco – El Milagro</option>
+                    <option value="Villa Nueva – Bárcenas">Villa Nueva – Bárcenas</option>
+                    <option value="Villa Nueva – El Frutal">Villa Nueva – El Frutal</option>
+                    <option value="Villa Nueva – Ciudad Real">Villa Nueva – Ciudad Real</option>
+                    <option value="San Miguel Petapa – Colinas de Petapa">San Miguel Petapa – Colinas de Petapa</option>
+                    <option value="Santa Catarina Pinula – zona de Condado Concepción">Santa Catarina Pinula – zona de Condado Concepción</option>
+                    <option value="Villa Canales – Boca del Monte">Villa Canales – Boca del Monte</option>
+                    <option value="Amatitlán – Entrada principal y comercio">Amatitlán – Entrada principal y comercio</option>
+                    </select>
+                <i class="fas fa-chevron-down select-arrow"></i>
+            </div>
+        </div>
+
+        <div id="packages-container">
+            <div class="form-section package-section" id="package-1">
+                <div class="package-header">
+                    <p>Paquete <span class="package-number">1</span></p>
+                    <button type="button" class="add-package-button" id="addPackageBtn">
+                        <i class="fas fa-plus"></i> Agregar paquete
+                    </button>
+                    </div>
+
+
+                <div class="package-options-horizontal">
+                    <div class="horizontal-option-group">
+                        <div class="radio-option">
+                            <input type="checkbox" id="size_28cm_10lbs_1" name="package_details_1" value="Máx. 28cm o 10lbs">
+                            <label for="size_28cm_10lbs_1">
+                                Máx. 28cm o 10lbs
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-option-group">
+                        <div class="radio-option package-box-type">
+                            <input type="checkbox" id="box_small_1" name="package_details_1" value="Caja Pequeña">
+                            <label for="box_small_1" class="box-label">
+                                <img src="https://www.easybolbox.com/img/box-1.75015beb1245a9fa2f6b29f965d76990.png" alt="Caja Pequeña" class="box-icon">
+                                <span>Caja Pequeña</span>
+                                </label>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-option-group">
+                        <div class="radio-option">
+                            <input type="checkbox" id="size_36cm_20lbs_1" name="package_details_1" value="Máx. 36cm o 20lbs">
+                            <label for="size_36cm_20lbs_1">
+                                Máx. 36cm o 20lbs
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-option-group">
+                        <div class="radio-option package-box-type">
+                            <input type="checkbox" id="box_medium_1" name="package_details_1" value="Caja Mediana">
+                            <label for="box_medium_1" class="box-label">
+                                <img src="https://mudanzasekuafran.es/wp-content/uploads/2017/07/caja-mediana-300x300.png" alt="Caja Mediana" class="box-icon">
+                                <span>Caja Mediana</span>
+                                </label>
+                        </div>
+                    </div>
+
+<div class="horizontal-option-group">
+                        <div class="radio-option">
+                            <input type="checkbox" id="size_45cm_50lbs_1" name="package_details_1" value="Máx. 45cm o 50lbs">
+                            <label for="size_45cm_50lbs_1">
+                                Máx. 45cm o 50lbs
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-option-group">
+                        <div class="radio-option package-box-type">
+                            <input type="checkbox" id="box_large_1" name="package_details_1" value="Caja Grande">
+                            <label for="box_large_1" class="box-label">
+                                <img src="https://ecobag.com.mx/wp-content/uploads/2021/01/caja-grande.png" alt="Caja Grande" class="box-icon">
+                                <span>Caja Grande</span>
+                                </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div> </div> <div class="navigation-and-continue">
+            <button type="button" class="cotizar-button" id="cotizarBtn">Cotizar</button>
+        </div>
+
+        <div id="cotizacion-resultado" class="form-section cotizacion-resultado" style="display: none;">
+            <h2>Detalles de la Cotización</h2>
+            <p><strong>Origen:</strong> <span id="res-origen"></span></p>
+            <p><strong>Destino:</strong> <span id="res-destino"></span></p>
+            <p><strong>Tipo de Paquete:</strong> <span id="res-paquete"></span></p>
+            <p><strong>Costo Estimado:</strong> <span id="res-costo">N/A</span></p>
+            <button type="button" class="close-cotizacion-btn" id="closeCotizacionBtn">Cerrar</button>
+        </div>
+        <div id="goodbye-message" class="form-section goodbye-message" style="display: none;">
+            <p>¡Gracias por su preferencia, puede visitar nuestra sucursal más cercana!</p>
+        </div>
+
+    </div>
+
+ </div>
+
+
+
+
+<br><br><br>
+       
+<div class="wrapper">
+    <footer>
+        <div class="footer-content">
+            <img src="Logo.png" alt="Fly Xpress Logo" class="footer-logo"> <h3>Fly Xpress</h3>
+            <p>Tel: 3321-8446 | Email: flyxpress.gt@gmail.com</p>
+
+            <div class="footer-links">
+                <a href="Prueba encabezado.html">Inicio</a> |
+                <a href="#equipo">Nosotros</a> |
+                <a href="#servicios">Servicios</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/tupagina" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/50233218446" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/flyxpress.gt" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <p class="copyright">© 2025 Fly Xpress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</div>
+    </div>
+<script src="script3.js"></script>
+<!-- Scripts Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// ESTO ES LO ÚNICO QUE NECESITAS PARA EL EFECTO DEL ENCABEZADO
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) { // Si te desplazas más de 50 píxeles...
+        header.classList.add('scrolled'); // ...añade la clase 'scrolled'
+    } else { // Si regresas hacia arriba y estás a menos de 50 píxeles...
+        header.classList.remove('scrolled'); // ...quita la clase 'scrolled'
+    }
+});
+</script>
+</body>
+</html>

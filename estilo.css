@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+  margin: 0;
+  /* Añadir un relleno superior al cuerpo para que el contenido no quede oculto bajo el encabezado fijo */
+
+}
+header {
+  display: flex; /* lo que se usa para agrupar el texto */
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4); /* gris inicial */
+  padding: 10px 20px;
+  color: white;
+  height: 100px;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  width: 100%;
+  position: fixed; /* Cambiado a fixed */
+  top: 0; /* Asegura que esté en la parte superior */
+  left: 0; /* Asegura que esté en la parte izquierda */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Nueva clase para el encabezado cuando el usuario hace scroll */
+header.scrolled {
+  background-color: #17192c; /* Color de fondo más oscuro al hacer scroll */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra sutil para destacarlo */
+  color: #FF6700; /* Cambiar el color del texto principal del header si deseas */
+}
+
+header.scrolled .logo {
+  color: white; /* Mantener el color del logo en blanco o cambiarlo como desees */
+}
+
+
+.logo {
+   display: inline;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Nunito', sans-serif; /* Cambiado a Nunito */
+  color: #FF6700; /* Color inicial del logo para que se vea bien en el fondo transparente */
+  transition: color 0.3s ease; /* Transición para el color del logo */
+}
+.logo img {
+   display: inline;
+   height: 90px;
+}
+
+.iconomenu {
+  font-size: 50px;
+  cursor: pointer;
+  display: block;
+  /* Asegúrate de que este icono también tenga un color que contraste con el fondo. */
+  color: white; /* Color añadido */
+  transition: color 0.3s ease; /* Transición añadida */
+}
+
+header.scrolled .iconomenu {
+  color: white; /* O el color que desees cuando el header esté "scrolled" */
+}
+
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 550px;
+  background-color: #23201e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%); /* Menú oculto */
+  transition: transform 0.3s ease-in-out; /* Aparece con transición */
+  z-index: 1000; /* Asegura que esté por encima */
+  overflow: auto;
+}
+.primary{
+  background-color: #23201e;
+  border: none;
+  height: 50px;
+  width: 500px;
+  color:#C0C0C0;
+  transition: border-color 0.30s ease;
+  border-radius: 10px;
+  font-size: 25px;
+  font-family: 'Nunito', sans-serif;
+  top: 50px;
+}
+.primary:hover{
+  background-color: #11100f;
+  border: 1px solid #FF6700;
+}
+.cerrar{
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  height: 60px;
+  width: 60px;
+  color: white; /* Color corregido */
+  cursor: pointer;
+  border: none;
+  opacity: 0.8;
+  font-weight: 100;
+  font-size: 50px; 
+  font-family: 'Nunito', sans-serif;
+  transform: scale(0.9);
+}
+#logo2{
+  width: auto;
+  height: 450px;
+  
+}
+
+.botonabrir{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 28px;
+  height: 100px;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border:none;
+  transition: background-color 0.3s ease;
+}
+.botonabrir:hover{
+  background-color: #3A6EA5;
+}
+.botoncerrar{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 28px;
+  height: 100px;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+  background-color: #23201e;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.botoncerrar:hover{
+  background-color: #FF6700;
+}
+.nav-links.active {
+  transform: translateX(0); /* Se desliza hacia adentro */ 
+}
+#contacto{
+font-family: 'Nunito', sans-serif;
+font-size: 50px;
+    }
+    #num{
+font-family: 'Nunito', sans-serif;
+font-size: 30px;
+    }/*Hasta aquí llega todo lo del menú y el encabezado*/
+    .isesion{
+    position: inline;
+    height: 100px;
+    background-color:#FF6700;
+    width: auto;
+    
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px; 
+    right: 100px;
+    border: none;
+    transition: background-color 0.3s ease;
+    color: white;
+    }
+    .isesion:hover{
+background-color: white;
+color:#FF6700;
+    }/*Hasta aquí llega todo lo del botón de inicio de sesión*/
+     .logogrande{
+    position: absolute;
+    top: 130px;
+    left: 475px;
+    z-index: 2;
+    }
+    .logogrande img{
+    width: 400px;
+    height: auto;
+    }/*Hasta aquí llega todo lo del logo grande que aparece sobre el primer carrusel de videos*/
+     .navbar {
+background: rgba(0, 0, 0, 0.4);
+transition: background 0.3s ease;
+z-index: 1;
+top: 0;
+}
+
+.navbar-brand img {
+height: 50px;
+width: auto;
+filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+z-index: 1;
+
+}
+
+.carousel-item {
+position: relative;
+height: 100vh;
+overflow: hidden;
+top: 0;
+font-family: 'Nunito', sans-serif;
+font-size: 50px;
+}
+
+.carousel-item video {
+position: absolute;
+top: 0;
+left: 0;
+min-width: 100%;
+min-height: 100%;
+object-fit: cover;
+z-index: 1;
+}
+.carousel-caption {
+z-index: 2;
+color: white;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+z-index: 1;
+
+}
+#mover{
+    transition: background-color 0.3s ease;
+    height: 100px;
+    width:100px;
+    border-radius: 100px;
+    top: 350px;
+    background-color: grey;
+    opacity: 0.2;
+
+}
+#mover:hover{
+background-color: #FF6700;
+opacity: 1;
+}/*Hasta aquí llega todo lo del carrusel de videos*/
+    .frase{
+    background-color: #22223b;
+    height: 450px;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 70px;
+    color: white;
+    text-align: center;
+    padding:50px;
+    }/*Hasta aquí llega toda la división en la que hice que cambiara de palabra*/
+    #quienessomos{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    }/*Hasta aquí llega toda la frase de abajo de la división*/
+    #palabra{
+    font-family: 'Nunito', sans-serif;
+    font-size: 70px;
+color:#FF6700;
+    }/*Esta es la palabra que cambia*/
+    .datos{
+    background-color: white;
+    height: 350px;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    padding:50px;
+    
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 0; 
+    }/*Hasta aquí llega toda la división que incluye los números cambiantes*/
+.card {
+    width: 18rem;
+    border-top: none;
+    border-left: none; /* Corregido */
+    border-bottom: none; /* Corregido */
+    border-right: 1px solid black;
+    background-color: white;
+    }/*Las tarjetas dentro de la división*/
+    #contador{
+    font-family: 'Nunito', sans-serif;
+    font-size: 75px;
+color:#FF6700;
+font-weight: bold; /* Corregido */
+    }
+     #contador2{
+    font-family: 'Nunito', sans-serif;
+    font-size: 75px;
+color:#FF6700;
+font-weight: bold; /* Corregido */
+    }
+      #contador3{
+    font-family: 'Nunito', sans-serif;
+    font-size: 75px;
+color:#FF6700;
+font-weight: bold; /* Corregido */
+    }
+        #contador4{
+    font-family: 'Nunito', sans-serif;
+    font-size: 75px;
+color:#FF6700;
+font-weight: bold; /* Corregido */
+}/*Hasta aquí llega todo de los números que cambian*/
+#hr {
+    width: 90%;
+    margin: 0 auto;
+    height: 50px;
+
+}/*Línea que divide las dos divisiones*/
+    .equipo{
+    background-color: white;
+    height: 600px;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    padding:0px;
+    padding-right:    350px;
+    border-bottom: 1px solid black;
+    display: flex;
+    
+    justify-content: center; 
+    gap: 0; 
+    display: flex;
+    border: none;
+    }/*Hasta aquí llega toda la división del equipo*/
+    .conoceequipo{
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-size: 40px;
+    background-color: white;
+    height: 500px;
+    width: 600px;
+    border-top: none;
+    border-left: none; /* Corregido */
+    border-bottom: none; /* Corregido */
+    border-right: 1px solid black;
+    padding-right: 60px;
+    padding-top: 50px;
+    }/*Frase de "conoce a nuestro equipo ejecutivo"*/
+    #textoejecutivo p{
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    background-color: white;
+   text-align: justify;
+    padding:30px;
+    }/*Texto*/
+     .imagen{
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    background-color: white;
+    height: 600px;
+    padding:40px;
+    width: 450px;
+    padding-left: 100px;
+    }
+    .imagen img{
+    height: 450px;
+    width: auto;
+    }/*Toda la división con imagen incluida del equipo*/
+    .bodega img{
+    width: 100%;
+    height: auto;
+    border:none;
+    }/*Imagen de la bodega*/
+
+      .servicios{
+    background-color: #22223b;
+    height: 1000px;
+    width: 90%;
+    
+    
+ 
+    text-align: center;
+    padding:50px;
+    border-radius: 30px;
+    margin:0 auto;} /*Toda la división azul de servicios*/
+
+        .titserv{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold; /* Corregido */
+    font-size: 50px;
+    color: white;
+    padding: 0;
+    height: 100px;
+    }/*Título de la división azul*/
+    .serv{
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: 20px;
+padding: 0;    
+    color: gray;
+    width: 700px;
+    margin: 0 auto;
+    }/*Texto de la división*/
+
+    .card-container1{
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: center;
+height: 550px;
+             gap: 1rem;
+             padding: 1rem;  
+          }
+           .card {
+             background-color: #C0C0C0;
+             width: 30rem;
+             font-family: 'Nunito', sans-serif;
+             font-size: 2px;
+            
+           }
+           .card-img-top {
+             width: 100%;
+             height: 200px;
+             object-fit: cover;
+           }
+
+            /* Se eliminan los estilos para #b y #a para revertir cambios de tamaño/posición */
+            /* #b, #a { ... } */
+            /* #a:hover, #b:hover { ... } */
+
+
+           #whatsappboton{
+    transition: background-color 0.3s ease;
+    height: 100px;
+    width:100px;
+    border-radius: 100px;
+    right: 10px;
+    top: 80%;
+    background-color: #25D366;
+    color: white;
+    font-size: 60px;
+    border:none;
+    position:fixed;
+    z-index: 2
+}/*Botón de whatsapp*/
+#mover:hover{
+background-color: #FF6700;
+color:#25D366;
+}/*Lo que hace que se quede quieto*/
+
+#loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    }/*Div completa que hace que al cargar se ponga gris la pantalla*/
+
+
+#loader video {
+    border-radius: 10px;
+    width: 250px;  
+    height: auto;
+    background: white;  
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);  
+    }/*Solo el video de carga*/
+
+
+             .card {
+             background-color: white;
+             width: 18rem;
+             font-family: 'Nunito', sans-serif;
+             font-size: 20px;
+             height: 450px;
+             
+           }
+           .card-img-top {
+             width: 100%;
+             height: 200px;
+             object-fit: cover;
+           }
+           
+     .card-container2 {
+       min-width: 250px;
+       width: 90%;
+       margin: 0 auto;
+       height: 450px;
+       background: white;
+       
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       color: white;
+       font-size: 1.2rem;
+       
+       gap:15px;
+
+     
+     }
+
+     .carrusel-populares::-webkit-scrollbar {
+       display: none;
+     }
+     .carrusel-populares {
+       -ms-overflow-style: none;
+       scrollbar-width: none;
+     }
+     .card-container2 img {
+   pointer-events: none;
+   user-select: none;}
+   .Comentariosclientes{
+     height: 550px;
+     width: 100%;
+     background-color: white; /* Corregido */
+     color:white;
+     margin: 0 auto;
+   }
+   .form-label{
+     color:white;
+   }
+     .titulocomentarios p{
+     font-weight: bold; /* Corregido */
+     font-family: 'Nunito', sans-serif;
+     font-size: 50px;
+     color:#FF6700;
+   text-align: center;
+   }
+   .inicio{
+     width: 100%;
+     height: 550px;
+     margin: 0 auto;
+   }
+   #fotoinicio img{
+     width: 100%;
+     height: auto;
+   }
+   /* Estilos para la nueva sección de comentarios (formulario) */
+  .dejacomentario {
+      background-color: #22223b;
+      height: auto; /* Cambiado a auto para que se ajuste al contenido */
+      padding: 40px 20px; /* Añadido padding para espacio interior */
+      width: 100%;
+      text-align: center;
+  }
+
+  .dejacomentario .mb-3 {
+      width: 60%; /* Ajustado el ancho para que los campos sean un poco más grandes */
+      max-width: 700px; /* Añadido un ancho máximo para pantallas muy grandes */
+      margin: 0 auto 20px auto; /* Centrado y añadido margen inferior */
+  }
+
+  .dejacomentario .form-control,
+  .dejacomentario .form-select {
+      background-color: #33334d; /* Un color de fondo más oscuro para los inputs */
+      color: white;
+      border: 1px solid #555577;
+      border-radius: 8px;
+      padding: 10px 15px;
+  }
+
+  .dejacomentario .form-control::placeholder,
+  .dejacomentario .form-select option {
+      color: #bbbbbb; /* Color del placeholder y opciones */
+  }
+
+  .dejacomentario .form-control:focus,
+  .dejacomentario .form-select:focus {
+      border-color: #FF6700; /* Borde naranja al enfocar */
+      box-shadow: 0 0 0 0.25rem rgba(255, 103, 0, 0.25); /* Sombra naranja al enfocar */
+      background-color: #33334d; /* Mantener el color de fondo */
+      color: white;
+  }
+
+  .dejacomentario .text-muted {
+      color: #C0C0C0 !important; /* Asegurar que el texto de privacidad sea visible */
+      font-size: 15px;
+      margin-top: 20px;
+  }
+
+  /* Estilos del botón de envío (submitButton) */
+  #submitButton {
+      background-color: #FF6700;
+      font-family: 'Nunito', sans-serif; /* Usando Nunito para consistencia */
+      color: white;
+      border: none;
+      padding: 10px 25px; /* Ajuste de padding para que se vea mejor */
+      border-radius: 5px; /* Bordes ligeramente redondeados */
+      cursor: pointer;
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      opacity: 1; /* Asegurar que no esté opaco por defecto */
+  }
+
+  #submitButton:hover:not(.disabled) {
+      background-color: #e65c00; /* Un tono un poco más oscuro al pasar el mouse */
+  }
+
+  #submitButton.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+  }
+           
+           footer {
+      background-color: #17192c;
+      color: #EBEBEB;
+      padding: 40px 20px;
+      text-align: center; /* Asegura que todo el contenido esté centrado */
+      display: flex; /* Usar flexbox para centrar y organizar mejor */
+      flex-direction: column;
+      align-items: center; /* Centra horizontalmente los elementos hijos */
+      justify-content: center; /* Centra verticalmente si el footer tiene una altura definida */
+  }
+
+  .footer-content {
+      max-width: 960px; /* Limita el ancho del contenido del footer si es necesario */
+      width: 100%;
+  }
+
+  .footer-logo {
+      height: 70px; /* Tamaño para un logo pequeño en el footer */
+      margin-bottom: 15px;
+  }
+
+  footer h3 {
+      margin-bottom: 10px;
+      font-size: 24px; /* Un poco más grande para el título */
+      color: #EBEBEB;
+      font-family: 'Nunito', sans-serif;
+  }
+
+  footer p,
+  footer a {
+      font-size: 16px; /* Un poco más grande para mejor legibilidad */
+      color: #C0C0C0;
+      margin: 8px 0; /* Ajustar el margen para más espaciado */
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+  }
+
+  footer a:hover {
+      color: #FF6700;
+  }
+
+  .footer-links {
+      margin-top: 20px; /* Más espacio arriba */
+      margin-bottom: 20px; /* Más espacio abajo */
+      display: flex; /* Para centrar los enlaces horizontalmente */
+      justify-content: center;
+      gap: 15px; /* Espacio entre los enlaces */
+  }
+
+  .social-icons {
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+
+  .social-icons a {
+      margin: 0 12px; /* Espacio entre los iconos */
+      color: #C0C0C0;
+      font-size: 28px; /* Tamaño de los iconos */
+      transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+      color: #FF6700;
+  }
+
+  .copyright {
+      margin-top: 25px; /* Más espacio arriba del copyright */
+      font-size: 14px;
+      color: #888; /* Un color un poco más suave */
+  }
+
+  /* Si quieres el botón de "volver arriba" */
+  #btnTop {
+      position: fixed;
+      bottom: 25%;
+      right: 38px;
+      z-index: 100;
+      background-color: #FF6700;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 12px 16px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none; /* Oculto al inicio */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      width: 50px;
+      height: 50px;
+  }
+
+  #btnTop:hover {
+      background-color: #22223b;
+  }
+
+
+
+/* tarjetas y comentarios xd */
+
+.card {
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición suave para el agrandamiento y el cambio de color */
+}
+
+.card:hover {
+    transform: scale(1.03); /* Aumenta ligeramente el tamaño de la tarjeta al pasar el mouse */
+    background-color: #FF6700; /* Cambia el color de fondo a naranja */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactuable */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Opcional: añade una sombra para un mejor efecto visual */
+     
+    height: 600px;
+}
+
+/* Si quieres que el texto dentro de la tarjeta también cambie de color para ser legible en el fondo naranja */
+.card:hover .card-text,
+.card:hover .card-title {
+    color: white; /* Cambia el color del texto a blanco */
+}

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLY XPRESS</title>
+  <link rel="icon" href="Logo.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+  /* Contenedor que cubre toda la pantalla y oscurece el fondo */
+  #loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* fondo negro con 60% opacidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  /* Video con fondo blanco, bordes redondeados y tamaño fijo */
+  #loader video {
+    border-radius: 10px;
+    width: 250px;  /* ajusta tamaño a lo que necesites */
+    height: auto;
+    background: white; /* asegura que el fondo sea blanco */
+    box-shadow: 0 0 15px rgba(0,0,0,0.3); /* sombra para que resalte */
+  }
+</style>
+  <style>
+   
+body{
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+
+}
+header {
+  display: flex; /* lo que se usa para agrupar el texto */
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4); /* gris inicial */
+  padding: 10px 20px;
+  color: white;
+  height: 100px;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  width: 100%;
+  position: fixed; /* Cambiado a fixed */
+  top: 0; /* Asegura que esté en la parte superior */
+  left: 0; /* Asegura que esté en la parte izquierda */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Nueva clase para el encabezado cuando el usuario hace scroll */
+header.scrolled {
+  background-color: #17192c; /* Color de fondo más oscuro al hacer scroll */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra sutil para destacarlo */
+  color: #FF6700; /* Cambiar el color del texto principal del header si deseas */
+}
+
+
+
+.logo {
+   display: inline;
+  font-weight: bold;
+  font-size: 30px;
+ font-family: 'Nunito', sans-serif;
+}
+.logo img {
+   display: inline;
+   height: 90px;
+}
+
+.iconomenu {
+  font-size: 50px;
+  cursor: pointer;
+  display: block;
+}
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 550px;
+  background-color: #23201e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%); /* Oculto fuera de pantalla */
+  transition: transform 0.3s ease-in-out; /* Transición suave */
+  z-index: 10;
+  overflow: auto;
+}
+.primary{
+  background-color: #23201e;
+  border: none;
+  height: 50px;
+  width: 500px;
+  color:#C0C0C0;
+  transition: border-color 0.30s ease;
+  border-radius: 10px;
+  font-size: 25px;
+  font-family: 'Nunito', sans-serif;
+  top: 50px;
+}
+.primary:hover{
+  background-color: #11100f;
+  border: 1px solid #FF6700;
+}
+.cerrar{
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  height: 60px;
+  width: 60px;
+  color: solid white;
+  cursor: pointer;
+  border: none;
+  opacity: 0.8;
+  font-weight: 100;
+  font-size: 50px;
+  font-family: 'Nunito', sans-serif;
+  transform: scale(0.9);
+}
+#logo2{
+  width: auto;
+  height: 450px;
+  
+}
+
+.botonabrir{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 28px;
+  height: 100px;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border:none;
+  transition: background-color 0.3s ease;
+}
+.botonabrir:hover{
+  background-color: #3A6EA5;
+}
+.botoncerrar{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 28px;
+  height: 100px;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+  background-color: #23201e;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.botoncerrar:hover{
+  background-color: #FF6700;
+}
+.nav-links.active {
+  transform: translateX(0); /* Se desliza hacia adentro */
+}
+#contacto{
+font-family: 'Nunito', sans-serif;
+font-size: 50px;
+  }
+  #num{
+font-family: 'Nunito', sans-serif;
+font-size: 30px;
+  }
+  .isesion{
+    position: inline;
+    height: 100px;
+    background-color:#FF6700;
+    width: auto;
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    right: 100px;
+    border: none;
+   transition: background-color 0.3s ease;
+    color: white;
+    top: 0;
+  }
+  .isesion:hover{
+background-color: white;
+color:#FF6700;
+  }
+  </style>
+</head>
+<body>
+  <div id="loader">
+  <video src="animacion.mp4" autoplay muted loop></video>
+</div>
+
+<div id="contenido" style="display: none;">
+  </div>
+<header>
+  <div class="logo">      &nbsp;
+Fly Xpress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+¡Tu envío seguro!</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+<button type="button" class="botonabrir">
+<div class="iconomenu" id="openMenu" onclick="toggleMenu()">☰</div></button><br><br>
+
+
+ <nav class="nav-links" id="navLinks"><br><br><button type="button" class="botoncerrar">
+    <div class="cerrar" onclick="toggleMenu()">✖</div></button><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <img src="Logo.png" id="logo2">
+  <a href="Prueba encabezado.html"><button type="button" class="primary"><i class="bi bi-shop"></i> Inicio</button></a><br><br>
+  <a href="cotizacion.html"><button type="button" class="primary"><i class="bi bi-box-seam"></i> Cotización en línea</button></a><br><br>
+  <a href="Cobertura.html"><button type="button" class="primary"><i class="bi bi-geo-alt"></i> Encontrar sucursales
+
+
+
+</div></button></a><br><br><br><br><br>
+  <div id="contacto">Atención al cliente</div>
+  <div id="num">3321-8446</div><br><br><br>
+</nav>
+</header>
+<style>
+  .imageninicial img{
+    width: 100%;
+    height: auto;
+    border: none;}
+  .titulo p{
+    font-style: bold;
+    font-family: 'Nunito', sans-serif;
+    font-size: 50px;
+    color:#FF6700;
+text-align: center;
+  }
+</style>
+<div class="imageninicial"><img src="sucursal.png"></div><br>
+<div class="titulo"><p>Sucursales disponibles</p></div>
+<style>
+.direcciones{
+    background-color: white;
+    height: 4000px;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    padding:50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+.card {
+    width: 18rem;
+    border-top: none;
+    border-left: : none;
+    border-bottom: : none;
+    border-right: 1px solid black;
+    height: 473px;
+    opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out,border-color 0.30s ease;
+ 
+  }
+  .card:hover{
+border: 5px solid #FF6700;
+color:#FF6700;
+
+  }
+  .card hr{
+    width:80%;    
+    border-top: 4px solid black;
+    margin:0 auto;
+  }
+  #texto{
+   
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+  }
+  .card button{
+    width: 50px;
+    height: auto;
+    border: none;    
+    background: none;
+  }
+  .card img{
+    width: 50px;
+    height: auto;
+    border: none;    
+    background: none;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+ 
+</style>
+
+<div class="direcciones">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><b>Zona 1 – Centro Histórico</b><br><hr><br><div id="texto">6a Avenida 4-25, Zona 1, Centro Histórico</div><br><a href="https://ul.waze.com/ul?place=Eis2QSBBdmVuaWRhIDQsIENkYWQuIGRlIEd1YXRlbWFsYSwgR3VhdGVtYWxhIjASLgoUChIJA4rrJheiiYURFOJ66oI9ut8QBCoUChIJ-dGO9C-iiYURFXCnG_xfJNo&ll=14.63977840%2C-90.51425870&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><b>Zona 4 – Cuatro Grados Norte / Distrito tecnológico</b><br><hr><br><div id="texto">Vía 6, 2-10, Zona 4, Cuatro Grados Norte</div><br><a href="https://ul.waze.com/ul?place=EiZWaWEgNiAyLCBDZGFkLiBkZSBHdWF0ZW1hbGEsIEd1YXRlbWFsYSIwEi4KFAoSCTHaYeEwoomFEXbEh2JmyrXIEAIqFAoSCfE0IAExoomFEYO12c8uGDjC&ll=14.62083300%2C-90.51273090&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><b>Zona 9 – Cerca de embajadas y oficinas</b><br><hr><br><div id="texto">5a Avenida 10-55, Zona 9, frente a Torre del Reformador</div><br><a href="https://ul.waze.com/ul?place=EjI1QSBBdmVuaWRhIDEwLCBDZGFkLiBkZSBHdWF0ZW1hbGEgMDEwMDksIEd1YXRlbWFsYSIwEi4KFAoSCWVbgPYsoomFEfElazublhXhEAoqFAoSCUserYPTo4mFEfh1qauYbjYq&ll=14.61498460%2C-90.51944950&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><b>Zona 10 – Zona financiera y comercial</b><br><hr><br><div id="texto">14 Calle 5-01, Zona 10, Oakland Mall</div><br><a href="https://ul.waze.com/ul?place=Ei8xNCBDYWxsZSA1LCBDZGFkLiBkZSBHdWF0ZW1hbGEgMDEwMTAsIEd1YXRlbWFsYSIwEi4KFAoSCfuwJlfGo4mFEbvxFpXLj1vlEAUqFAoSCQtdobnFo4mFEWpbdoubMq-M&ll=14.59715220%2C-90.50899160&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><b>Zona 11 – Calzada Roosevelt</b><br><hr><br><div id="texto">Calzada Roosevelt 18-40, Zona 11, Colonia Mariscal</div><br><a href="https://ul.waze.com/ul?place=EjBDYWx6YWRhIFJvb3NldmVsdCwgQ2RhZC4gZGUgR3VhdGVtYWxhLCBHdWF0ZW1hbGEiLiosChQKEgnt3-zPTaCJhREOKsjmEDAoHRIUChIJJZ1hyKmhiYURjvxI0k1bjdI&ll=14.62413150%2C-90.55398990&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><b>Zona 12 – Ciudad Universitaria / Atanasio Tzul</b><br><hr><br><div id="texto">22 Avenida 10-30, Zona 12, Ciudad Universitaria</div><br><a href="https://ul.waze.com/ul?place=EikyMiBBdmVuaWRhLCBDZGFkLiBkZSBHdWF0ZW1hbGEsIEd1YXRlbWFsYSIuKiwKFAoSCTESJxVAoYmFEXeUL3JC9cfUEhQKEgk78zINP6GJhRFJk3mu1Da2Lw&ll=14.58701980%2C-90.54365910&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><b>Zona 13 – Aeropuerto La Aurora</b><br><hr><br><div id="texto">7a Avenida 15-20, Zona 13, Aurora I</div><br><a href="https://ul.waze.com/ul?place=Eik3QSBBdmVuaWRhLCBDZGFkLiBkZSBHdWF0ZW1hbGEsIEd1YXRlbWFsYSIuKiwKFAoSCftKhm56oYmFEfp7ZNHz8JFREhQKEgmlq6mOW6GJhRFUMu6uDeWNJQ&ll=14.60606300%2C-90.53197760&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><b>Zona 14 – Zona hotelera y oficinas</b><br><hr><br><div id="texto">18 Calle 3-45, Zona 14, cerca de Plaza Fontabella</div><br><a href="https://ul.waze.com/ul?place=EikxOCBDYWxsZSAzLCBDZGFkLiBkZSBHdWF0ZW1hbGEsIEd1YXRlbWFsYSIwEi4KFAoSCQe2BKDko4mFEefwdhx09cAgEAMqFAoSCVkZFP7Ao4mFETosfHaKfpW5&ll=14.57812570%2C-90.52135010&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><b>Zona 15 – Vista Hermosa</b><br><hr><br><div id="texto">Avenida Vista Hermosa 12-85, Zona 15, Vista Hermosa II</div><br><a href="https://ul.waze.com/ul?place=EjJCbHZkLiBWaXN0YSBIZXJtb3NhLCBDZGFkLiBkZSBHdWF0ZW1hbGEsIEd1YXRlbWFsYSIuKiwKFAoSCespFhe7o4mFETAdzo7bgS0PEhQKEgl_oHwVB6OJhRHrnLsM4-bAQw&ll=14.59481130%2C-90.49468910&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Zona 6 – San Juan de Dios / Barrio San Antonio</b><br><hr><br><div id="texto">10a Calle 8-44, Zona 6, Colonia San Antonio</div><br><a href="https://ul.waze.com/ul?place=EigxMEEgQ2FsbGUsIENkYWQuIGRlIEd1YXRlbWFsYSwgR3VhdGVtYWxhIi4qLAoUChIJHTzmAfafiYURGu1JXkIyV6MSFAoSCaUPNfaSn4mFEatAo_I-LN4g&ll=14.65808790%2C-90.58765300&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Zona 7 – El Granero / Kaminal Juyú</b><br><hr><br><div id="texto">Calzada San Juan 35-22, Zona 7, Kaminal Juyú</div><br><a href="https://ul.waze.com/ul?place=Ei1DYWx6LiBTYW4gSnVhbiwgQ2RhZC4gZGUgR3VhdGVtYWxhLCBHdWF0ZW1hbGEiLiosChQKEgkTx9lFNaCJhRF9PDOhXZjewBIUChIJHeZcF2CfiYURNbS4dacziig&ll=14.62763770%2C-90.55374170&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Zona 18 – Atlántida / Colonia San Rafael</b><br><hr><br><div id="texto">Boulevard Los Olivos 15-10, Zona 18, Atlántida</div><br><a href="https://ul.waze.com/ul?place=ChIJi32Jbd6ZiYURI6glErS6_Es&ll=14.67139850%2C-90.46699190&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Zona 21 – Nimajuyú / Mezquital</b><br><hr><br><div id="texto">12 Avenida 21-60, Zona 21, Nimajuyú</div><br><a href="https://ul.waze.com/ul?place=EjtOaW1hanV5dSAxIDE2MDcsIDEyIGNhbGxlIDEyLCBDZGFkLiBkZSBHdWF0ZW1hbGEsIEd1YXRlbWFsYSIuKiwKFAoSCYlnQPrDpomFEa-PEgqcdTU0EhQKEglNbUNoxKaJhRE2T_iCo-PJ_Q&ll=14.54923490%2C-90.55124500&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Mixco – San Cristóbal</b><br><hr><br><div id="texto">Calzada San Cristóbal 20-05, Zona 8 de Mixco</div><br><a href="https://ul.waze.com/ul?place=EklCbHZyLiBQcmluY2lwYWwgZGUgQ2RhZC4gU2FuIENyaXN0w7NiYWwgMjAsIENkYWQuIGRlIEd1YXRlbWFsYSwgR3VhdGVtYWxhIjASLgoUChIJg1LPeoigiYUR07yWoQnK5dMQFCoUChIJm_j0JIygiYUR26MKzYcb8s8&ll=14.60908410%2C-90.59127740&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Mixco – El Milagro</b><br><hr><br><div id="texto">8a Calle 15-30, Colonia El Milagro</div><br><a href="https://ul.waze.com/ul?place=EjVDLiBQcmluY2lwYWwgQ29sb25pYSBFbCBNaWxhZ3JvLCBHdWF6YXBhLCBFbCBTYWx2YWRvciIuKiwKFAoSCXsQHwLVPWOPEToDaNhQYEBEEhQKEgmTZ0e11z1jjxEUsLBg7M_T8Q&ll=13.86931550%2C-89.17241790&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Villa Nueva – Bárcenas</b><br><hr><br><div id="texto">Calle Real 7-70, Bárcenas, Villa Nueva</div><br><a href="https://ul.waze.com/ul?place=EiNDLiBSZWFsIDcsIFNhbnRhIFRlY2xhLCBFbCBTYWx2YWRvciIwEi4KFAoSCeXZaEPgLmOPEadUUUUZxL--EAcqFAoSCYOHwYEnL2OPEdEdpc_h6Ump&ll=13.67963090%2C-89.30251040&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Villa Nueva – El Frutal</b><br><hr><br><div id="texto">Avenida El Frutal 11-11, zona 5, Villa Nueva</div><br><a href="https://ul.waze.com/ul?place=ChIJa0WvBgCniYURZi9-o_3URq8&ll=14.51282150%2C-90.56930390&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Villa Nueva – Ciudad Real</b><br><hr><br><div id="texto">3a Avenida 10-80, Ciudad Real I</div><br><a href="https://ul.waze.com/ul?place=EjVBdi4gZGUgQ2RhZC4gUmVhbCwgMywgMDM1MDMgQmVuaWRvcm0sIEFsaWNhbnRlLCBTcGFpbiIwEi4KFAoSCRH1lQdcBGINEcM7fNnfaxQOEAMqFAoSCcMEm4ZbBGINEb-pZMoK9MJz&ll=38.54268040%2C-0.10640740&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>San Miguel Petapa – Colinas de Petapa</b><br><hr><br><div id="texto">6a Calle 3-25, Colinas de Petapa</div><br><a href="https://ul.waze.com/ul?place=EhM2YSBDYWxsZSwgR3VhdGVtYWxhIi4qLAoUChIJw9zVSmSmiYURdFDMrW0Y5HwSFAoSCf0ejlxKpomFEUaXkEjns59c&ll=14.50967320%2C-90.53967730&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Santa Catarina Pinula – Condado Concepción</b><br><hr><br><div id="texto">Boulevard Concepción 18-88, Condado Concepción</div><br><a href="https://ul.waze.com/ul?place=EiNDYXJyLiBDb25kYWRvIENvbmNlcGNpb24sIEd1YXRlbWFsYSIuKiwKFAoSCX_QDumzpImFEYLqalF8lk5iEhQKEglFM1xlgKGJhREle4ZbgcdySg&ll=14.54892630%2C-90.45402790&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Villa Canales – Boca del Monte</b><br><hr><br><div id="texto">4a Avenida 6-06, Boca del Monte</div><br><a href="https://ul.waze.com/ul?place=ChIJLV3AdQChiYURbpyPcfPsVbc&ll=14.54803430%2C-90.52214190&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <p class="card-text"><b>Amatitlán – Entrada principal y comercio</b><br><hr><br><div id="texto">Avenida Central 9-90, Barrio El Rincón, Amatitlán</div><br><a href="https://ul.waze.com/ul?place=ChIJnzxYFwDZ7IURd7STF57aGEM&ll=16.75254810%2C-93.10863030&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">
+  <button><img src="waze.png"></button>
+</a> </p>
+  </div>
+</div>
+
+
+
+</div>
+
+</div>
+<style>
+  #btnTop {
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  z-index: 100;
+  background-color: #FF6700;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none; /* Oculto al inicio */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  width: 50px;
+  height: 50px;
+}
+
+#btnTop:hover {
+  background-color: #22223b;
+}
+</style>
+<button onclick="scrollToTop()" id="btnTop"><i class="bi bi-arrow-up-circle"></i></button>
+
+
+
+<br><br><br><br><br><br><br><br><br>
+<style>
+    .wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+       
+           footer {
+      background-color: #17192c;
+      color: #EBEBEB;
+      padding: 40px 20px;
+      text-align: center; /* Asegura que todo el contenido esté centrado */
+      display: flex; /* Usar flexbox para centrar y organizar mejor */
+      flex-direction: column;
+      align-items: center; /* Centra horizontalmente los elementos hijos */
+      justify-content: center; /* Centra verticalmente si el footer tiene una altura definida */
+  }
+
+  .footer-content {
+      max-width: 960px; /* Limita el ancho del contenido del footer si es necesario */
+      width: 100%;
+  }
+
+  .footer-logo {
+      height: 70px; /* Tamaño para un logo pequeño en el footer */
+      margin-bottom: 15px;
+  }
+
+  footer h3 {
+      margin-bottom: 10px;
+      font-size: 24px; /* Un poco más grande para el título */
+      color: #EBEBEB;
+      font-family: 'Nunito', sans-serif;
+  }
+
+  footer p,
+  footer a {
+      font-size: 16px; /* Un poco más grande para mejor legibilidad */
+      color: #C0C0C0;
+      margin: 8px 0; /* Ajustar el margen para más espaciado */
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+  }
+
+  footer a:hover {
+      color: #FF6700;
+  }
+
+  .footer-links {
+      margin-top: 20px; /* Más espacio arriba */
+      margin-bottom: 20px; /* Más espacio abajo */
+      display: flex; /* Para centrar los enlaces horizontalmente */
+      justify-content: center;
+      gap: 15px; /* Espacio entre los enlaces */
+  }
+
+  .social-icons {
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+
+  .social-icons a {
+      margin: 0 12px; /* Espacio entre los iconos */
+      color: #C0C0C0;
+      font-size: 28px; /* Tamaño de los iconos */
+      transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+      color: #FF6700;
+  }
+
+  .copyright {
+      margin-top: 25px; /* Más espacio arriba del copyright */
+      font-size: 14px;
+      color: #888; /* Un color un poco más suave */
+  }
+
+  /* Si quieres el botón de "volver arriba" */
+  #btnTop {
+      position: fixed;
+      bottom: 15%;
+      right: 38px;
+      z-index: 100;
+      background-color: #FF6700;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 12px 16px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none; /* Oculto al inicio */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      width: 50px;
+      height: 50px;
+  }
+
+  #btnTop:hover {
+      background-color: #22223b;
+  }
+
+</style>
+
+<div class="wrapper">
+    <footer>
+        <div class="footer-content">
+            <img src="Logo.png" alt="Fly Xpress Logo" class="footer-logo"> <h3>Fly Xpress</h3>
+            <p>Tel: 3321-8446 | Email: flyxpress.gt@gmail.com</p>
+
+            <div class="footer-links">
+                <a href="Prueba encabezado.html">Inicio</a> |
+                <a href="#equipo">Nosotros</a> |
+                <a href="#servicios">Servicios</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/tupagina" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/50233218446" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/flyxpress.gt" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <p class="copyright">© 2025 Fly Xpress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</div>
+
+<script src="script2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// ESTO ES LO ÚNICO QUE NECESITAS PARA EL EFECTO DEL ENCABEZADO
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) { // Si te desplazas más de 50 píxeles...
+        header.classList.add('scrolled'); // ...añade la clase 'scrolled'
+    } else { // Si regresas hacia arriba y estás a menos de 50 píxeles...
+        header.classList.remove('scrolled'); // ...quita la clase 'scrolled'
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,665 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+.paquete{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: white;
+    padding-left: 30%;
+}
+.logo1 img{
+    width: 100%;
+    height: auto;
+}
+
+body{
+  margin: 0 auto;
+}
+header {
+  display: flex; /* lo que se usa para agrupar el texto */
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4); /* gris inicial */
+  padding: 10px 20px;
+  color: white;
+  height: 100px;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  width: 100%;
+  position: fixed; /* Cambiado a fixed */
+  top: 0; /* Asegura que esté en la parte superior */
+  left: 0; /* Asegura que esté en la parte izquierda */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Nueva clase para el encabezado cuando el usuario hace scroll */
+header.scrolled {
+  background-color: #17192c; /* Color de fondo más oscuro al hacer scroll */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra sutil para destacarlo */
+  color: #FF6700; /* Cambiar el color del texto principal del header si deseas */
+}
+
+
+.logo {
+   display: inline;
+  font-weight: bold;
+  font-size: 30px;
+ font-family: 'Nunito', sans-serif; /* Cambiado de roboto a Nunito */
+}
+.logo img {
+   display: inline;
+   height: 90px;
+}
+
+.iconomenu {
+  font-size: 50px;
+  cursor: pointer;
+  display: block;
+}
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 550px;
+  background-color: #23201e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%); /* Menú oculto */
+  transition: transform 0.3s ease-in-out; /* Aparece con transición */
+  z-index: 10;
+  overflow: auto;
+}
+.primary{
+  background-color: #23201e;
+  border: none;
+  height: 50px;
+  width: 500px;
+  color:#C0C0C0;
+  transition: border-color 0.30s ease;
+  border-radius: 10px;
+  font-size: 25px;
+  font-family: 'Nunito', sans-serif; /* Cambiado de roboto a Nunito */
+  top: 50px;
+}
+.primary:hover{
+  background-color: #11100f;
+  border: 1px solid #FF6700;
+}
+.cerrar{
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  height: 60px;
+  width: 60px;
+  color: solid white;
+  cursor: pointer;
+  border: none;
+  opacity: 0.8;
+  font-weight: 100;
+  font-size: 50px; 
+  font-family: 'Nunito', sans-serif; /* Cambiado de Roboto a Nunito */
+  transform: scale(0.9);
+}
+#logo2{
+  width: auto;
+  height: 450px;
+  
+}
+
+.botonabrir{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 28px;
+  height: 100px;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border:none;
+  transition: background-color 0.3s ease;
+}
+.botonabrir:hover{
+  background-color: #3A6EA5;
+}
+.botoncerrar{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 28px;
+  height: 100px;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+  background-color: #23201e;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.botoncerrar:hover{
+  background-color: #FF6700;
+}
+.nav-links.active {
+  transform: translateX(0); /* Se desliza hacia adentro */ 
+}
+#contacto{
+font-family: 'Nunito', sans-serif; /* Cambiado de roboto a Nunito */
+font-size: 50px;
+  }
+  #num{
+font-family: 'Nunito', sans-serif; /* Cambiado de roboto a Nunito */
+font-size: 30px;
+  }/*Hasta aquí llega todo lo del menú y el encabezado*/
+ .isesion{
+    position: inline;
+    height: 100px;
+    background-color:#FF6700;
+    width: auto;
+    
+    font-family: 'Nunito', sans-serif; /* Cambiado de roboto a Nunito */
+    font-size: 25px; 
+    right: 100px;
+    border: none;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  .isesion:hover{
+background-color: white;
+color:#FF6700;
+  }/*Hasta aquí llega todo lo del botón de inicio de sesión*/
+  #loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }/*Div completa que hace que al cargar se ponga gris la pantalla*/
+
+
+  #loader video {
+    border-radius: 10px;
+    width: 250px;  
+    height: auto;
+    background: white; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.3); 
+  }/*Solo el video de carga*/
+
+.main-container {
+    background-color: #22223b;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 650px;
+    box-sizing: border-box;
+    
+}
+
+h1 {
+    text-align: left;
+    color: white; /* CAMBIADO A BLANCO */
+    font-size: 36px;
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+
+.form-section {
+    background-color: #C0C0C0;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+}
+
+.question-text {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.label-text {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+/* Estilos para los selects */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+select {
+    width: 100%;
+    padding: 15px 20px;
+    padding-right: 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.08);
+}
+
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.35);
+}
+
+.select-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+    font-size: 18px;
+}
+
+.package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.package-header p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+.add-package-button {
+    background-color: #e0e0e0;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.add-package-button:hover {
+    background-color: #d0d0d0;
+}
+
+.remove-package-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+    margin-left: 10px;
+}
+
+.remove-package-button:hover {
+    background-color: #c82333;
+}
+
+
+.package-info-text {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+
+.package-options-horizontal {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: flex-start;
+    margin-top: 20px;
+    align-items: flex-start; 
+}
+
+.horizontal-option-group {
+    display: flex;
+    flex-direction: column; 
+    flex: 1 1 calc(50% - 10px); 
+    min-width: 180px; 
+    max-width: 280px; 
+    box-sizing: border-box; 
+}
+
+.radio-option {
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: center;
+}
+
+
+.radio-option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    outline: none;
+}
+
+.radio-option input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.radio-option input[type="checkbox"]:checked::after {
+    content: '\2713';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+}
+
+
+.radio-option label {
+    font-size: 17px;
+    color: #333;
+    cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.box-label {
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.box-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.box-label span {
+    margin: 0;
+    font-weight: bold;
+}
+
+
+.navigation-and-continue {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.cotizar-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cotizar-button:hover {
+    background-color: #0056b3;
+}
+
+
+.cotizacion-resultado {
+    background-color: #eaf7ff;
+    border: 1px solid #a8d7ff;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.cotizacion-resultado h2 {
+    color: #0056b3;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cotizacion-resultado p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cotizacion-resultado strong {
+    color: #000;
+}
+
+.close-cotizacion-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-cotizacion-btn:hover {
+    color: #333;
+}
+
+.goodbye-message {
+    background-color: #d4edda;
+    border: 1px solid #28a745;
+    color: #155724;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .form-section {
+        padding: 20px;
+    }
+    .question-text {
+        font-size: 20px;
+    }
+    select, .cotizar-button {
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+    .package-header p, .package-info-text, .radio-option label {
+        font-size: 16px;
+    }
+    .box-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .cotizacion-resultado p {
+        font-size: 16px;
+    }
+
+    .package-options-horizontal {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .horizontal-option-group {
+        max-width: 100%; 
+        flex: 1 1 auto; 
+    }
+    .goodbye-message {
+        font-size: 18px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 26px;
+    }
+    .question-text {
+        font-size: 18px;
+    }
+    .add-package-button, .remove-package-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    .radio-option label {
+        font-size: 15px;
+    }
+    .box-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+ .wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        
+           
+           footer {
+      background-color: #17192c;
+      color: #EBEBEB;
+      padding: 40px 20px;
+      text-align: center; /* Asegura que todo el contenido esté centrado */
+      display: flex; /* Usar flexbox para centrar y organizar mejor */
+      flex-direction: column;
+      align-items: center; /* Centra horizontalmente los elementos hijos */
+      justify-content: center; /* Centra verticalmente si el footer tiene una altura definida */
+  }
+
+  .footer-content {
+      max-width: 960px; /* Limita el ancho del contenido del footer si es necesario */
+      width: 100%;
+  }
+
+  .footer-logo {
+      height: 70px; /* Tamaño para un logo pequeño en el footer */
+      margin-bottom: 15px;
+  }
+
+  footer h3 {
+      margin-bottom: 10px;
+      font-size: 24px; /* Un poco más grande para el título */
+      color: #EBEBEB;
+      font-family: 'Nunito', sans-serif;
+  }
+
+  footer p,
+  footer a {
+      font-size: 16px; /* Un poco más grande para mejor legibilidad */
+      color: #C0C0C0;
+      margin: 8px 0; /* Ajustar el margen para más espaciado */
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+  }
+
+  footer a:hover {
+      color: #FF6700;
+  }
+
+  .footer-links {
+      margin-top: 20px; /* Más espacio arriba */
+      margin-bottom: 20px; /* Más espacio abajo */
+      display: flex; /* Para centrar los enlaces horizontalmente */
+      justify-content: center;
+      gap: 15px; /* Espacio entre los enlaces */
+  }
+
+  .social-icons {
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+
+  .social-icons a {
+      margin: 0 12px; /* Espacio entre los iconos */
+      color: #C0C0C0;
+      font-size: 28px; /* Tamaño de los iconos */
+      transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+      color: #FF6700;
+  }
+
+  .copyright {
+      margin-top: 25px; /* Más espacio arriba del copyright */
+      font-size: 14px;
+      color: #888; /* Un color un poco más suave */
+  }
+
+  /* Si quieres el botón de "volver arriba" */
+  #btnTop {
+      position: fixed;
+      bottom: 15%;
+      right: 38px;
+      z-index: 100;
+      background-color: #FF6700;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 12px 16px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none; /* Oculto al inicio */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      width: 50px;
+      height: 50px;
+  }
+
+  #btnTop:hover {
+      background-color: #22223b;
+  }

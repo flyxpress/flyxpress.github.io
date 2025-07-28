@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FLY XPRESS</title>
+    <link rel="icon" href="Logo.png" type="image/png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<header>
+    <div class="logo">     &nbsp;
+Fly Xpress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+¡Tu envío seguro!</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+
+    <a href="iniciodesesion.html"><button type="button"class="isesion"><div class="iniciosesion">Iniciar sesión</div></button></a>
+<button type="button" class="botonabrir">
+<div class="iconomenu" id="openMenu" onclick="toggleMenu()">☰</div></button><br><br>
+
+<nav class="nav-links" id="navLinks"><br><br><button type="button" class="botoncerrar">
+    <div class="cerrar" onclick="toggleMenu()">✖</div></button><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <img src="Logo.png" id="logo2">
+    <a href="Prueba encabezado.html"><button type="button" class="primary"><i class="bi bi-shop"></i> Inicio</button></a><br><br>
+    <a href="cotizacion.html"><button type="button" class="primary"><i class="bi bi-box-seam"></i> Cotización en línea</button></a><br><br>
+    <a href="cobertura.html"><button type="button" class="primary"><i class="bi bi-geo-alt"></i>
+Encontrar sucursales</button></a><br><br><br><br><br>
+    <div id="contacto">Atención al cliente</div>
+    <div id="num">3321-8446</div><br><br><br>
+</nav>
+</header>
+
+<div class="logogrande">
+    <img src="Logo.png">
+</div>
+
+<div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <video autoplay muted loop>
+                <source src="vid1.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Envíos Rápidos</h1>
+                <p>Tu paquete llega cuando debe llegar.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <video autoplay muted loop>
+                <source src="vid2.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Confianza Total</h1>
+                <p>Seguimiento en tiempo real y atención personalizada.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <video autoplay muted loop>
+                <source src="vid3.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Red de Cobertura</h1>
+                <p>Llegamos a todos los rincones del país.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev" id="mover">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next" id="mover">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<div class="frase">
+    <p>¡Somos <span id="palabra">innovadores</span>!</p>
+    <div id="quienessomos">
+    <p><b><center>¿Quiénes Somos?</center></b><br>
+En FLY XPRESS, nos especializamos en ofrecer soluciones de envíos rápidas, seguras y eficientes dentro de la ciudad. Nacimos con la visión de conectar personas, negocios y sueños, brindando un servicio confiable que se adapta a las necesidades actuales. <br>
+
+Con un equipo comprometido y tecnología en constante evolución, nos aseguramos de que cada paquete llegue a su destino con puntualidad y cuidado. Nos mueve la pasión por hacer las cosas bien, la cercanía con nuestros clientes y la convicción de que la logística urbana puede ser más humana y eficiente. <br>
+
+<b>FLY XPRESS</b> no solo entrega paquetes, entrega confianza.</p></div>
+</div>
+
+<div class="datos">
+<div class="card1" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text"><p>Miles de Paquetes Entregados: <br> <span id="contador">0</span></p></p>
+    </div>
+</div>
+
+<div class="card1" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text"><p>Miles de Km Recorridos: <br> <span id="contador2">0</span></p></p>
+    </div>
+</div>
+
+<div class="card1" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text"><p>Rutas Logísticas: <br><br> <span id="contador3">0</span></p></p>
+    </div>
+</div>
+    
+<div class="card1" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text"><p>Sedes logísticas: <br><br> <span id="contador4">0</span></p></p>
+    </div>
+</div><br><br>
+</div><hr id="hr">
+
+<div class="equipo" id="equipo">
+    
+<div class="conoceequipo">
+    <p>Conoce a nuestro equipo ejecutivo</p>
+    <div id="textoejecutivo"><p>El equipo ejecutivo de FLY XPRESS está conformado por profesionales apasionados por la innovación, la logística y el servicio al cliente. Cada uno aporta experiencia estratégica y visión de crecimiento, liderando con compromiso y cercanía. Unidos por un propósito común, impulsan cada decisión con el objetivo de hacer de FLY XPRESS una empresa ágil, confiable y centrada en las personas.
+
+</p></div>
+</div>
+<div class="imagen">
+    <img src="foto.jpg">
+</div>
+</div>
+
+<div class="bodega">
+    <img src="bod2.png">
+</div>
+<br><br><br><br>
+
+<div class="servicios" id="servicios">
+    <div class="titserv"><i class="bi bi-box-seam-fill"></i><br>Nuestros servicios </div>
+    <div class="serv"><br>En Fly Xpress, nos especializamos en hacer que cada envío llegue rápido, seguro y con una sonrisa. Ofrecemos soluciones logísticas eficientes adaptadas a tus necesidades, ya sea que envíes un paquete local o internacional. Descubre todo lo que podemos hacer por ti. </div><br><br>
+
+<div id="carouselExampleControls" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="card-container1">
+                <div class="card">
+                    <img src="https://packsys.com/cdn/shop/products/Caja085x5x3_Cerrada800x800.jpg?v=1642526658" class="card-img-top" alt="Objeto">
+                    <div class="card-body">
+                        <p class="card-text"><b>Envíos Estándar / Económicos:</b> 
+                        Servicio básico de entrega de paquetes no urgentes.<br>
+                        Beneficios: Ideal para envíos regulares, tarifas competitivas.<br>
+                        Clave: "Envío confiable y asequible."</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2023/09/29/16959807980504.jpg" class="card-img-top" alt="Clase">
+                    <div class="card-body">
+                        <p class="card-text"><b>Envíos Urgentes / Exprés:</b><br>
+                            Entrega rápida para paquetes que necesitan llegar en un tiempo específico.<br>
+Beneficios: Rapidez garantizada, ideal para documentos o productos perecederos.<br>
+Clave: "Velocidad cuando más la necesitas."</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.ncsl.org/image/upload/c_fill,g_auto,w_600/f_auto,q_auto/v1666843745/website/1320834676.jpg" class="card-img-top" alt="Encapsulación">
+                    <div class="card-body">
+                        <p class="card-text"><b>Seguimiento de Paquetes (Tracking en Vivo):</b><br> Permite a los clientes ver el estado y la ubicación de su envío en tiempo real.<br>
+Beneficios: Tranquilidad, transparencia, control total.<br>
+Clave: "Rastrea tu envío en cada paso del camino."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="card-container1"> <div class="card">
+                    <img src="https://img.freepik.com/fotos-premium/caja-carga-escudo-sobre-fondo-blanco-ilustracion-3d-aislada_356060-3512.jpg" class="card-img-top" alt="Herencia">
+                    <div class="card-body">
+                        <p class="card-text"><b>Seguro de Envío Opcional:</b><br>Protección adicional para el valor de los paquetes en caso de pérdida o daño.<br>
+Beneficios: Seguridad y paz mental para artículos de valor.<br>
+Clave: "Protege tus envíos valiosos."</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://www.digitalbizmagazine.com/wp-content/uploads/2018/08/imagen-1-696x464.jpg" class="card-img-top" alt="Polimorfismo">
+                    <div class="card-body">
+                        <p class="card-text"><b>Servicio al Cliente Personalizado:</b><br>Soporte dedicado para consultas, problemas o asistencia con envíos.<br>
+Beneficios: Atención rápida y eficiente, resolución de dudas.<br>
+Clave: "Siempre listos para ayudarte."</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://irp.cdn-website.com/d9aba119/dms3rep/multi/empty-and-closed-boxes-on-the-white.jpg" class="card-img-top" alt="Abstracción">
+                    <div class="card-body">
+                        <p class="card-text"><b>Soluciones para Empresas / E-commerce:</b> <br>Servicios adaptados para negocios con alto volumen de envíos (tarifas especiales, integración, logística).<br>
+Beneficios: Eficiencia operativa, ahorro de costos para negocios.<br>
+Clave: "Socios logísticos para tu negocio en crecimiento."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" id="a">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span> </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" id="b">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span> </button>
+</div>
+</div><br><br><br><br>
+
+<div class="Comentariosclientes" > 
+<div class="titulocomentarios"><p>Comentarios de nuestros clientes</p></div>
+    <div class="card-container2">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29uYXxlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">"Facil y Rapido"</h5>
+                <p class="card-text">El proceso de envio es claro, facil y confiable. Ademas tiene opciones de entraga muy utiles.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Hace 2 hora(s)</small>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://st4.depositphotos.com/12985790/i/600/depositphotos_229756778-stock-photo-portrait-beautiful-young-businesswoman-smiling.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">"Es confiable"</h5>
+                <p class="card-text">Gracias a Fly Xpress, enviar un paquete ya no es un problema. Su servicio es muy rápido y su atención al cliente es de primera.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Hace 6 hora(s)</small>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://us.123rf.com/450wm/adam121/adam1211210/adam121121000085/15692619-retrato-de-una-mujer-atractiva-en-el-parque.jpg?ver=6" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">"Es súper Rápido"</h5>
+                <p class="card-text">Me encantó lo eficiente que fue la entrega. El paquete llego antes de lo esperado, lo recomiendo 10/10.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Hace 4 día(s)</small>
+            </div>
+        </div>
+    
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1090878494/es/foto/retrato-de-joven-sonriente-a-hombre-guapo-en-camiseta-polo-azul-aislado-sobre-fondo-gris-de.jpg?s=612x612&w=0&k=20&c=dHFsDEJSZ1kuSO4wTDAEaGOJEF-HuToZ6Gt-E2odc6U=" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">"Confiable"</h5>
+                <p class="card-text">Fly Xpress brinda una atención personalizada que da confianza, siempre me mantuvieron informado a cerca del estado del envio.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Hace 2 día(s)</small>
+            </div>
+        </div>
+    
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1163294201/es/foto/una-mujer-de-negocios-inglesa-que-posa-con-los-brazos-cruzados.jpg?s=612x612&w=0&k=20&c=9wsrPV1zD00yMMRRA8lIrW6k4stRKnzsFD2ebhJ79QU=" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">"Sin importar el tamaño"</h5>
+                <p class="card-text">No importa si es un pedido grande o pequeño, siempre han cumplido con lo prometido.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Hace 30 minuto(s)</small>
+            </div>
+        </div>
+    
+        <div class="card">
+            <img src="https://img.freepik.com/foto-gratis/retrato-hombre-joven-expresivo-vistiendo-traje-formal_273609-6942.jpg?semt=ais_hybrid&w=740" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">"Me Encanta"</h5>
+                <p class="card-text"><br>Volvería a usar Fly Xpress sin pensarlo. Mi paquete llegó rápido y en perfecto estado.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Hace 1 día(s)</small>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br>
+<style>
+    .mb-3{
+        width: 50%;
+        margin:0 auto;
+    }
+</style>
+<div class="dejacomentario">
+    <div class="titulocomentarios"><p>¡Contáctanos o Déjanos tu Opinión!</p></div>
+    <div class="mb-3">
+        <label for="inputName" class="form-label">Tu Nombre</label>
+        <input type="text" class="form-control" id="inputName" placeholder="Ej: Juan Pérez">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo@correo.com">
+    </div>
+    <div class="mb-3">
+        <label for="selectReason" class="form-label">Motivo del Contacto (Opcional)</label>
+        <select class="form-select" id="selectReason">
+            <option selected disabled>Selecciona una opción...</option>
+            <option value="consulta">Consulta General</option>
+            <option value="envio">Problema con Envío</option>
+            <option value="sugerencia">Sugerencia</option>
+            <option value="reclamo">Reclamo</option>
+            <option value="otro">Otro</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Escribe tu Mensaje o Comentario</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-xl text-uppercase" id="openLoginModalBtn"
+                style="background-color: #FF8C00; border-color: #FF8C00; color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+            Enviar Mensaje
+        </button>
+    </div>
+    <p class="text-center text-muted mt-3">Nos pondremos en contacto contigo lo antes posible.</p>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="text-align: center; font-size: 1.1em; line-height: 1.6;">
+                Para poder enviar un mensaje, necesitas iniciar sesión.
+                <br><br>
+                <a href="iniciodesesion.html" class="btn btn-primary"
+                   style="background-color: #FF8C00; border-color: #FF8C00; color: white; font-weight: bold; margin-top: 15px;">
+                    Iniciar Sesión
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<button onclick="scrollToTop()" id="btnTop"><i class="bi bi-arrow-up-circle"></i></button>
+
+<a href="https://wa.me/50233218446" target="_blank" rel="noopener noreferrer"><button class="controlwhatsapp" type="button" data-bs-target="#whatsapp" id="whatsappboton"><i class="bi bi-whatsapp"></i></button></a>
+
+<div class="wrapper">
+    <footer>
+        <div class="footer-content">
+            <img src="Logo.png" alt="Fly Xpress Logo" class="footer-logo"> <h3>Fly Xpress</h3>
+            <p>Tel: 3321-8446 | Email: flyxpress.gt@gmail.com</p>
+
+            <div class="footer-links">
+                <a href="Prueba encabezado.html">Inicio</a> |
+                <a href="#equipo">Nosotros</a> |
+                <a href="#servicios">Servicios</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/tupagina" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/50233218446" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/flyxpress.gt" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <p class="copyright">© 2025 Fly Xpress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) { 
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Script para el modal
+    document.addEventListener('DOMContentLoaded', function() {
+        const submitButton = document.getElementById('openLoginModalBtn');
+        if (submitButton) {
+            submitButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Evita que el formulario se envíe
+                // Muestra el modal de Bootstrap
+                const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                loginModal.show();
+            });
+        }
+    });
+</script>
+</body>
+</html>
